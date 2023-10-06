@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff129;
+    width: 100%;
+}
+
+#heading {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    background: #ea5f89;
+    padding: 20px 0 0 30px;
+    /*  height: 50px;
+ align-items: center;
+  justify-content: space-around; */
+}
+
+#shop-co {
+    font-size: 2.5em;
+    /* flex: 1; */
+}
+
+#search {
+    border-radius: 7px;
+    border: none;
+    width: 250px;
+    height: 25px;
+}
+
+#search-icon{
+    margin-left: -30px;
+}
+#search-box {
+    margin-left: 170px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+#menu {
+    flex: 1;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+li {
+    padding-right: 40px;
+
+}
+
+#drop-down {
+    display: none;
+    margin-left: 30px;
+    color: #b1acac;
+}
+
+#acct-drop-down:hover #drop-down {
+    display: block;
+}
+
+#menu a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#menu a:hover {
+    color: #0000ff;
+}
+
+#shopping-made-easy {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
+#woman {
+    width: 25%;
+}
+
+#sub-body {
+    display: flex;
+    align-items: center;
+}
+
+#available-products {
+    background: #0000ff;
+    height: 650px;
+}
+
+#available-products>h2 {
+    color: #ffffff;
+}
+
+.product {
+    background-color: #ffc0cb;
+    width: 20%;
+    border-radius: 12px;
+    font-family: Arial, Haettenschweiler, Impact, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    padding-bottom: 20px;
+    margin-right: 50px;
+}
+
+.name-price {
+    text-align: center;
+    margin-top: -40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.add-to-cart {
+    background-color: #ffffff;
+    padding: 10px 0 10px 0;
+    width: 53%;
+    text-decoration: none;
+    margin-left: 60px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.product:hover {
+    background-color: #ebcece;
+    /* box-shadow: 3px 5px 1px #9114a1; */
+}
+
+section>h2 {
+    text-align: center;
+}
+
+.add-to-cart:hover {
+    background-color: #b1acac;
+}
+
+.item-image {
+    width: 70%;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+
+#table-lamp {
+    width: 50%;
+    margin-left: 60px;
+    margin-top: -10px;
+}
+
+.sub-products {
+    margin: 30px 0px 0 0px;
+    display: flex;
+    justify-content: center;
+   /* flex-wrap: wrap; */
+}
+
+#name-price-table-chair-newspaper {
+    text-align: center;
+    margin-top: -30px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+
+
+ @media screen and (max-width:768px){
+    body{
+        max-width: 70%;
+    }
+    #heading{
+        display: block;
+    }
+    #search-icon{
+        display: none;
+    }
+}
+/*
+@media (min-width: 768px){
+    #search-box , #menu{
+        flex: 0 0 33%;
+    }
+} */

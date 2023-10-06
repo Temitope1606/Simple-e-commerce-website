@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping cart</title>
+    <link rel="stylesheet" href="shopping-cart.css">
 </head>
+
 <body>
     <h2>Shopping Cart</h2>
     <main>
         <section>
             <table border="2px">
                 <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <tr>
-                    <td>Cream</td>
-                    <td>$600</td>
-                    <td><input type="text" id="cream" name="cream"/></td>
-                    <td></td>
-                    <td><button>Remove</button></td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td><img src="images/air_fryer.png" alt="air-fryer" class="fryer-shoe"> </td>
+                        <td>Air Fryer</td>
+                        <td>&#36;1000</td>
+                        <td><input type="text" id="air-fryer" name="air-fryer" /></td>
+                        <td></td>
+                        <td><button>Remove</button></td>
+                    </tr>
 
-                <tr>
-                    <td>Perfume</td>
-                    <td>$690</td>
-                    <td><input type="text" id="perfume" name="perfume"/></td>
-                    <td></td>
-                    <td><button>Remove</button></td>
-                </tr>
-            </tbody>
+                    <tr>
+                        <td><img src="images/black.jpeg" alt="track-shoes" class="fryer-shoe"></td>
+                        <td>Track Shoes</td>
+                        <td>&#36;890</td>
+                        <td><input type="text" id="perfume" name="perfume" /></td>
+                        <td></td>
+                        <td><button>Remove</button></td>
+                    </tr>
+                </tbody>
             </table>
-            
-            <div>
-            <a href="index.html" target="_blank">Update Cart</a>
-        </div>
-           <!-- <a href="" target="_blank"><button>Check Out</button></a> -->
+
+            <div id="update-cart">
+                <a href="index.html" target="_blank">Update Cart</a>
+            </div>
+            <!-- <a href="" target="_blank"><button>Check Out</button></a> -->
 
 
         </section>
     </main>
 </body>
+
 </html>
