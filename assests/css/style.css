@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Avenir Next";
+    src: url(../fonts/AvenirNextLTPro-Regular.otf);
+}
+
+body{
+    font-family: "Avenir Next";
+}
 
 /* Header */
 #menu-btn {
@@ -16,16 +24,21 @@
     width: 60%;
 }
 
-#navbar {
+header {
     width: 100%;
-    display: flex;
-    padding: 20px 70px;
-    justify-content: space-between;
-    align-items: center;
     background-color: #f3f4f6;
-    position: fixed;
+    position: sticky;
     box-shadow: 0 0 13px #aca8a8;
     top: 0;
+}
+
+#navbar {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+    align-items: center;
     /* z-index: 999; */
 }
 

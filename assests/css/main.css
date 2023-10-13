@@ -43,10 +43,17 @@ body {
 }
 
 #content {
-    margin-top: 200px;
     padding: 20px 70px;
     display: flex;
     height: 70vh;
+    background: url(https://img.freepik.com/free-photo/shopping-cart-miniature_23-2148081068.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#hero-text {
+    margin-top: 60px
 }
 
 #woman {
@@ -54,10 +61,6 @@ body {
     height: 500px;
     margin-left: 400px;
 
-}
-
-#content div h1 {
-    width: 120%;
 }
 
 /* #content {
@@ -80,32 +83,32 @@ body {
 
 /* Products */
 
-#available-products {
-    padding: 20px 70px;
-    margin-top: 40px;
-
-}
-
 .sub-products {
     display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    width: 90%;
+    justify-content: space-between;
     /* margin-right: -100px; */
 }
 
 .sub-products .product {
-    width: 20%;
+    width: 23%;
     background-color: #f3f4f6;
     box-shadow: 0 0 13px #aca8a8;
     border-radius: 10px;
     margin-bottom: 50px;
     height: 320px;
-    margin-right: 50px;
 }
 
 /* Product Image */
 section div img {
-    height: 250px;
+    max-height: 100%;
     width: 100%;
-    margin-top: -50px;
+}
+
+section {
+    margin-bottom: 30px;
 }
 
 /* */
@@ -119,19 +122,19 @@ section div img {
 
 .sub-products .product .name {
     color: #040273;
-    padding: 20px 0 0 30px;
+    /* padding: 20px 0 0 30px; */
     font-weight: bold;
     font-size: 1.4em;
 }
 
 .sub-products .product .price {
-    padding: 20px 30px;
+    /* padding: 20px 30px; */
     font-size: 1.5em;
     font-weight: bold;
 }
 
 .sub-products .product .add-to-cart>a {
-    margin-left: 30px;
+    /* margin-left: 30px; */
     background-color: #f6a03e;
     text-decoration: none;
     color: #040273;
@@ -146,8 +149,49 @@ section div img {
     color: #ffffff;
 }
 
+.product > div:first-child {
+    height: 60%;
+}
+
 .name-price-cart {
-    margin-top: -50px;
+    text-align: center;
+    margin: 0 auto;
+    height: 35%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 /* Responsiveness */
+
+@media only screen and (max-width: 768px) {
+    #hero-text {
+        margin-top: 150px
+    }
+
+    #content {
+        padding: 20px 20px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width: 550px) {
+    .sub-products {
+        display: block;
+        flex-wrap: unset;
+        width: 100%;
+        justify-content: unset;
+        /* margin-right: -100px; */
+    }
+    
+    .sub-products .product {
+        width: 80%;
+        background-color: #f3f4f6;
+        box-shadow: 0 0 13px #aca8a8;
+        border-radius: 10px;
+        margin: 0 auto 50px;
+        height: 320px;
+    }
+  }
