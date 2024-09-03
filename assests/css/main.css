@@ -1,210 +1,261 @@
-
+/* ctrl + f5 */
 body {
-    width: 100%;
-    height: 100%;
-   
+  width: 100%;
+  height: 100%;
 }
 
 /* Content */
 #content h1 {
-    font-size: 2.2em;
+  font-size: 2.2em;
 }
 
 #content p {
-    font-size: 1.3em;
-    margin-top: 30px;
+  font-size: 1.3em;
+  margin-top: 30px;
 }
 
+/*<<<<< SHOP NOW BUTTON  >>>>>*/
 #content a {
-    background-color: #f6a03e;
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 10px;
-    color: #040273;
-    font-weight: bold;
-    font-size: 1.2em;
+  background-color: #f6a03e;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #040273;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 #content a:hover {
-    background-color: #040273;
-    color: #ffffff;
+  background-color: #040273;
+  color: #ffffff;
 }
 
 #shop-now {
-    margin-top: 40px;
+  margin-top: 100px;
 }
 
 #content {
-    padding: 20px 70px;
-    display: flex;
-    height: 70vh;
- /*   background: url(https://img.freepik.com/free-photo/shopping-cart-miniature_23-2148081068.jpg); */
-  background: url('../images/store.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  padding: 20px 70px;
+  display: flex;
+  height: 70vh;
+  /*   background: url(https://img.freepik.com/free-photo/shopping-cart-miniature_23-2148081068.jpg); */
+  background: url("../images/store.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #hero-text {
-    margin-top: 110px
+  margin-top: 110px;
 }
 
+/* for the "Available Products" heading  and arrows */
 #product-heading {
-    text-align: center;
-    color: #040273;
+  text-align: center;
+  color: #040273;
+  font-size: 1.8em;
 }
+
+#products-arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 63px 0 70px;
+}
+
+.pre-btn,
+.nxt-btn {
+  background-color: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 3em;
+  color: blue;
+  cursor: pointer;
+  margin-left: 5px;
+  border: 2px solid #f6a03e;
+  /* position: relative;
+  z-index: 9; */
+}
+
+.pre-btn:hover,
+.nxt-btn:hover {
+  color: #f6a03e;
+  border: 2px solid #040273;
+}
+
+/* .pre-btn{
+  transform: rotate(180deg);
+} */
+
+#arrow {
+  display: flex;
+}
+/* <<>> */
 
 /* Products */
 
+.products-container {
+  overflow: hidden;
+  width: 90%; /* Adjust to fit exactly four items */
+  margin: 18px auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* white-space: nowrap; Prevent items from wrapping */
+}
+
+.products-container::-webkit-scrollbar {
+  display: none; /* This removes the scrollable icon below the items */
+}
+
 .sub-products {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px auto;
-    width: 90%;
-    justify-content: space-between;
-    /*gap: 30px;*/
+  display: flex;
+  width: 180%;
+  justify-content: space-between;
+  gap: 25px; /* Add consistent gap between items */
+  padding: 10px 0;
+  /*overflow-x: auto;
+  scroll-behavior: smooth;
+ flex-wrap: wrap;
+  gap: 30px;*/
 }
 
 .sub-products .product {
-    width: 23%;
-    background-color: #f3f4f6;
-    box-shadow: 0 0 13px #aca8a8;
-    border-radius: 10px;
-    margin-bottom: 50px;
-    height: 320px;
+  width: 11.5%;
+  background-color: #f3f4f6;
+  box-shadow: 0 0 5px #aca8a8;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  height: 320px;
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
 }
 
 /* Product Image */
 section div img {
-    max-height: 100%;
-    width: 100%;
+  max-height: 100%;
+  width: 100%;
 }
-
-
 
 section {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-
-
 
 #item {
-    height: 200px;
-    margin-top: 0px;
-    padding-bottom: 15px;
+  height: 200px;
+  margin-top: 0px;
+  padding-bottom: 15px;
 }
-
 
 .sub-products .product .name {
-    color: #040273;
-    /* padding: 20px 0 0 30px; */
-    font-weight: bold;
-    font-size: 1.4em;
+  color: #040273;
+  /* padding: 20px 0 0 30px; */
+  font-weight: bold;
+  font-size: 1.3em;
 }
 
-
 .sub-products .product .price {
-    /* padding: 20px 30px; */
-    font-size: 1.5em;
-    font-weight: bold;
+  /* padding: 20px 30px; */
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .sub-products .product button {
-    width: 200px;
-    height: 45px;
-    background-color: #f6a03e;
-    color: #040273;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    font-family: "Avenir Next";
+  width: 200px;
+  height: 45px;
+  background-color: #f6a03e;
+  color: #040273;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Avenir Next";
+  /* margin-right: 20px;
+  margin-top: 20px; */
 }
 
-.btn-text{
-    font-weight: bold;
-    font-size: 1.5em;
+.btn-text {
+  font-weight: bold;
+  font-size: 1.5em; /* 1em */
 }
 
 .sub-products .product button:hover {
-    background-color: #040273;
-    color: #ffffff;
+  background-color: #040273;
+  color: #ffffff;
 }
 
 .product > div:first-child {
-    height: 60%;
+  height: 60%; /* 50% */
 }
 
 .name-price-cart {
-    text-align: center;
-    margin: 0 auto;
-    height: 35%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  text-align: center;
+  margin: 0 auto;
+  height: 35%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-
 
 /*Adjustment made to Wall Clock */
 
-#clock{
- width: 75%;
- margin-left: 30px;
+#clock {
+  width: 75%;
+  margin-left: 30px;
 }
 
-#name-price-cart-clock{
-    margin-top: -20px;
-}  
+#name-price-cart-clock {
+  margin-top: -20px;
+}
 
 /* Adjustment made to SD CARD */
-#sd{
-    width: 75%;
-    height: 75%;
-    margin: 30px;
+#sd {
+  width: 75%;
+  height: 75%;
+  margin: 30px;
 }
 
 /* Adjustment made to SHIRTS AND FLASH DRIVE */
-.shirt-flash{
-    width: 65%;
-    margin: 5px 40px;
+.shirt-flash {
+  width: 65%;
+  margin: 5px 40px;
 }
 
 /* Adjustment made to Traveling Box with Kit Bag*/
-#travel-bag{
-    margin-left: 40px;
+#travel-bag {
+  margin-left: 40px;
 }
-
 
 /* Functionality */
 
-  /* loading icon */
-  .loading-container{
-    display: none;
-  }
-
+/* loading icon */
+.loading-container {
+  display: none;
+}
 
 /*--quantity -- */
 .quantity-control {
-    display: flex;
-    align-items: center;
-    font-weight: bolder;
-   /* background-color: #ff0000;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  /* background-color: #ff0000;
     color: #040273;
     padding: 10px;
     border-radius: 5px;
     font-family: "Avenir Next"; */
-  }
+}
 
-  .decrement,.increment{
-    font-size: 1.5em;
-  }  
-  
-  .quantity-control .quantity {
-    margin: 0 10px;
-  }
+.decrement,
+.increment {
+  font-size: 1.5em;
+}
 
-  /* Adding item to cart 
+.quantity-control .quantity {
+  margin: 0 10px;
+}
+
+/* Adding item to cart 
 
   .cart-item {
     border: 1px solid #ccc;
@@ -230,27 +281,26 @@ section {
 -->** PHONES
 */
 
-  @media only screen and (max-width: 600px) {
-    #hero-text {
-        margin-top: 115px
-    }
+@media only screen and (max-width: 600px) {
+  #hero-text {
+    margin-top: 50px;
+  }
 
-    #content {
-        padding: 20px 20px;
-    }
+  #content {
+    padding: 20px 20px;
+  }
 
-    .sub-products {
-        display: block;
-        width: 70%;
-       /* flex-wrap: unset;
+  .sub-products {
+    display: block;
+    width: 70%;
+    /* flex-wrap: unset;
        justify-content: unset; */
-    }
-    
-    .sub-products .product {
-        width: 80%;
-        margin: 0 auto 50px;
-    }
+  }
 
+  .sub-products .product {
+    width: 80%;
+    margin: 0 auto 50px;
+  }
 }
 
 /* Responsiveness 
@@ -258,8 +308,8 @@ section {
 */
 
 /* @media only screen and (min-width: 601px ) and (max-width: 768px ) {   OR (max-width: 788px )  */
-@media only screen and (min-width: 601px ) and (max-width: 940px ) {
-   /* #hero-text {
+@media only screen and (min-width: 601px) and (max-width: 940px) {
+  /* #hero-text {
         margin-top: 245px;
     }
 
@@ -275,39 +325,35 @@ section {
         font-size: 2.7em;
     }
 */
-    .sub-products {
-      /*  display: flex;
+  .sub-products {
+    /*  display: flex;
         margin: 20px auto;
         width: 90%; */
-        flex-wrap: wrap;
-        gap: 100px;
-    }
+    flex-wrap: wrap;
+    gap: 100px;
+  }
 
-    .sub-products .product {
-        width: 40.4%;
-        margin: 0;
-    }
-
+  .sub-products .product {
+    width: 40.4%;
+    margin: 0;
+  }
 }
 
 /* Responsiveness 
 -->**  LAPTOPS
 */
 
-
-@media only screen and (min-width: 941px ) and (max-width: 1065px ) {
-    .sub-products {
-      /*  display: flex;
+@media only screen and (min-width: 941px) and (max-width: 1065px) {
+  .sub-products {
+    /*  display: flex;
         margin: 20px auto;
         width: 90%; */
-        flex-wrap: wrap;
-        gap: 50px;
-    }
+    flex-wrap: wrap;
+    gap: 50px;
+  }
 
-   .sub-products .product {
-        width: 25%;
-        margin: 0;
-    } 
-
+  .sub-products .product {
+    width: 25%;
+    margin: 0;
+  }
 }
-

@@ -1,115 +1,119 @@
+/* FOR ITEM SCROLLING */
+const productContainers = document.querySelectorAll(".products-container");
+const nxtBtn = document.querySelectorAll(".nxt-btn");
+const preBtn = document.querySelectorAll(".pre-btn");
 
+productContainers.forEach((item, i) => {
+  const productWidth =
+    item.querySelector(".product").clientWidth +
+    parseInt(getComputedStyle(item.querySelector(".product")).marginRight); // Get the width of a single product including margin
 
+  nxtBtn[i].addEventListener("click", () => {
+    item.scrollLeft += productWidth; // Scroll by the width of one product
+  });
+
+  preBtn[i].addEventListener("click", () => {
+    item.scrollLeft -= productWidth; // Scroll back by the width of one product
+  });
+});
+// <<<<>>>>>>>
 
 // "X" button in the sidebar
 const sidebar = document.getElementById("open-sidebar");
 const closemenu = document.getElementById("closeBtn");
 
 closemenu.addEventListener("click", function () {
-  sidebar.checked = false;  // unchecks the checkbox
+  sidebar.checked = false; // unchecks the checkbox
 });
-
-// For cart counter
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
-let itemCount = 0;
-
+// <<<<>>>>>>>
 
 /* The codes in here will be executed when "ADD TO CART" button is clicked */
+// Attach event listeners to all "ADD TO CART" buttons
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
+addToCartButtons.forEach((button) => {
+  // a function
+  button.addEventListener("click", () => {
+    // a function
+    addToCart(button);
+  });
+});
+
+// Initialize cart count
+let cartCount = 0;
+
+// Function to update the cart count display
+function updateCartCount() {
+  document.querySelector("#cart-count").innerText = cartCount;
+  document.querySelector("#cart-count-ph").innerText = cartCount;
+}
+
+// Function to handle adding an item to the cart
 function addToCart(button) {
-  
-  // to update the cart counter
-  itemCount++;
-  document.getElementById('cart-count').innerText = itemCount;
-  document.getElementById('cart-count-ph').innerText = itemCount;
+  // Increment cart count
+  cartCount++;
+  updateCartCount();
 
   // to notify that an item has been added to the cart
-  notification.style.display = 'block';
+  notification.style.display = "block";
 
   // hides the notification after 3 seconds
   setTimeout(() => {
-    notification.style.display = 'none';
+    notification.style.display = "none";
   }, 3000);
 
   /* QUANTITY INCREASE AND DECREASE */
   // hides the "ADD TO CART" Button
-  button.style.display = 'none';
+  button.style.display = "none";
 
   // shows the quantity controls "-" & "+"
   const quantityControl = button.nextElementSibling;
-  quantityControl.style.display = 'flex';
+  quantityControl.style.display = "flex";
 }
 
 /* Function for quantity controls */
+// Function to handle quantity changes
 function changeQuantity(button, change) {
-  // get the quantity text(amount)
-  const quantity = button.parentElement.querySelector('.quantity');
-
-  // get the current quantity
+  const quantity = button.parentElement.querySelector(".quantity");
   let currentQuantity = parseInt(quantity.innerText); // parseInt() converts the quantity text to integer
-  // update the quantity
-  currentQuantity += change;
 
-  // ensuring the quantity doesn't go below 0
-   if (currentQuantity < 1) {
-      currentQuantity = 0;
-   }
-  // updating the quantity text(amount)
+  // Update quantity
+  currentQuantity += change;
+  if (currentQuantity < 1) {
+    currentQuantity = 0; // Ensure minimum quantity is 0
+  }
+
   quantity.innerText = currentQuantity;
 
   // When "+" is clicked
-if(change === 1){
-   // to show that the item was successfully added
-   notification.style.display = 'block';
+  if (change === 1) {
+    // to show that the item was successfully added
+    notification.style.display = "block";
 
-   // hides the notification after 3 seconds
-   setTimeout(() => {
-    notification.style.display = 'none';
-  }, 3000);
- }
- // When "-" is clicked
-else{
-  // to show that the item was successfully added
-  notificationRemove.style.display = 'block';
+    // hides the notification after 3 seconds
+    setTimeout(() => {
+      notification.style.display = "none";
+    }, 3000);
+  }
+  // When "-" is clicked
+  else {
+    // to show that the item was successfully added
+    notificationRemove.style.display = "block";
 
-  // hides the notification after 3 seconds
-  setTimeout(() => {
-   notificationRemove.style.display = 'none';
- }, 3000);
+    // hides the notification after 3 seconds
+    setTimeout(() => {
+      notificationRemove.style.display = "none";
+    }, 3000);
+  }
+  // Update cart count based on quantity change
+  cartCount += change;
+  // Ensure cartCount doesn't go below 0
+  if (cartCount < 0) {
+    cartCount = 0;
+  }
+  // Update cart count in menu bar
+  updateCartCount();
 }
-  // update the cart count
- cartCount += currentQuantity;
-cartCount = parseInt(quantity.innerText);
-
- updateCartCount();
-} 
-
-
-// Function for updating the cart count on the shopping cart icon
-  let cartCount = 0;
- function updateCartCount() {
-   document.querySelector('#cart-count').innerText = cartCount;
-   document.querySelector('#cart-count-ph').innerText = cartCount;
-
-
-//   const quantitySpans = document.querySelectorAll('.quantity-control .quantity');
-
-//   // calculate the total quantity
-//   let totalQuantity = 0;
-//   quantitySpans.forEach(span => {
-//     totalQuantity += parseInt(span.innerText);
-//   });
-
-//   // Update the cart count display
-//   document.querySelector('#cart-count').innerText = totalQuantity;
-//   document.querySelector('#cart-count-ph').innerText = totalQuantity;
- }
-
-// iterates through all the "ADD TO CART" present
-addToCartButtons.forEach(function (button) {
-  button.addEventListener('click', function () {
-    addToCart(button);
-  });
-});
+// <<<<>>>>>>>
 
 // For when the shopping cart icon is hovered
 const shoppingCart = document.querySelector("#cart");
@@ -142,11 +146,11 @@ function hidePopUpMessagePh() {
 }
 
 // For the notification
-const notification = document.getElementById('notification');
-const closeNotification = document.getElementById('close-notification');
-const notificationRemove = document.getElementById('notification-remove');
+const notification = document.getElementById("notification");
+const closeNotification = document.getElementById("close-notification");
+const notificationRemove = document.getElementById("notification-remove");
 
 // for closing the notification bar
-closeNotification.addEventListener('click', () => {
-  notification.style.display = 'none';
+closeNotification.addEventListener("click", () => {
+  notification.style.display = "none";
 });
