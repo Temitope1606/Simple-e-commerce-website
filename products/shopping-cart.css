@@ -102,8 +102,11 @@ td a {
     font-size: 1.2em;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3bbe2b1953806a18c1f926380d0dacc2a7e7226d
 td img {
     width: 90px;
     height: 90px;
@@ -128,7 +131,11 @@ td:last-child {
 th:last-child {
     text-align: right;
 }
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> 3bbe2b1953806a18c1f926380d0dacc2a7e7226d
 
 /*-- media query*/
 @media (max-width:768px) {
