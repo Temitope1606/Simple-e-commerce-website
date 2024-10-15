@@ -16,6 +16,7 @@ body {
     margin-top: 30px;
     text-align: center;
     height: 100%;
+    margin-bottom: 50px; /* Add padding here to create space above the footer */
 }
 
 form h2 {
@@ -29,7 +30,7 @@ form h2 {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 50%;
+    width: 70%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -71,14 +72,15 @@ footer {
 }
 
 /* Responsiveness */
-@media (max-width:768px) {
+@media (max-width:950px) {
     #logo-acct {
         width: 20%;
     }
 
     #create {
         border: none;
-        width: 100%;
+        width: 60%;
+    box-shadow: 0 0 7px #aca8a8;
     }
 
     input[type="text"],
@@ -86,5 +88,7 @@ footer {
     input[type="password"] {
         width: 100%;
     }
+
+   
 
 }

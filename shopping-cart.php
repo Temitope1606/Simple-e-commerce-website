@@ -1,3 +1,20 @@
+<?php
+include('auth.php');
+// $cartCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+// Get the cart count from the function
+$cartCount = $ecw->getCartCount();
+
+// To remove items....
+if (isset($_POST['remove_item'])) {
+    $itemId = mysqli_escape_string($ecw->link, $_POST['sn']);
+
+    // Remove the item from the database
+    $query = "DELETE FROM shopping_cart_info_table WHERE sn = $itemId";
+    mysqli_query($ecw->link, $query);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +24,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping cart</title>
     <link rel="stylesheet" href="assests/fontawesome/css/all.css">
+
+    <!-- linking bootstap folder -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- for my custom font to load -->
     <link rel="stylesheet" href="assests/css/style.css">
     <link rel="stylesheet" href="products/shopping-cart.css">
 </head>
@@ -33,8 +55,8 @@
 
                 <li><a href="index.php" id="active"> Home </a> </li>
                 <li> <a href="new-arrival.php"> New Arrivals </a> </li>
-                <li> <a href="sign-up.html"> Register </a> </li>
-                <li> <a href="sign-in.html"> Log In </a> </li>
+                <li> <a href="sign-up.php"> Register </a> </li>
+                <li> <a href="sign-in.php"> Log In </a> </li>
                 <!-- <li id="dropdown">
                     <a href="#">Account</a>
                     <ul id="dropdown-content">
@@ -47,9 +69,9 @@
 
                     <!-- Shopping Cart icon -->
                     <div id="shopping-cart-icon">
-                        <span id="cart-count">0</span>
-                        <a href="shopping-cart.html"><i class="fa fa-shopping-cart" id="cart"></i> </a>
-                        <div id="popup">Your shopping cart is empty !! </div>
+                        <span id="cart-count"><?php echo $cartCount; ?></span>
+                        <a href="shopping-cart.php"><i class="fa fa-shopping-cart" id="cart"></i> </a>
+                        <div class="alert alert-primary" id="popup">Your shopping cart is empty !! </div>
                     </div>
                 </li>
 
@@ -59,8 +81,8 @@
             <!-- Shopping Cart icon for phones,tablets -->
 
             <div id="shopping-cart-icon-ph">
-                <span id="cart-count-ph">0</span>
-                <a href="shopping-cart.html"> <i class="fa fa-shopping-cart" id="cart-Ph"></i> </a>
+                <span id="cart-count-ph"><?php echo $cartCount; ?></span>
+                <a href="shopping-cart.php"> <i class="fa fa-shopping-cart" id="cart-Ph"></i> </a>
                 <div id="popup-Ph">Your shopping cart is empty !! </div>
             </div>
 
@@ -75,28 +97,35 @@
 
 
     <main>
-            <h2>Shopping Cart</h2>
-            <!-- Cart items will be displayed here -->
-            <section>
-                <table border="4">
-                    <thead>
-                        <th>S/N</th>
-                        <th>Item Image</th>
-                        <th>Item Name</th>
-                        <th>Item Price</th>
-                        <th>Item Quantity</th>
-                    </thead>
-                    <tbody>
-                        <td>1</td>
-                        <td><img src="assests/images/wine.png" alt=""></td>
-                        <td>3450.00</td>
-                    </tbody>
-                </table>
-            </section>
+        <h2>Shopping Cart</h2>
+        <!-- Cart items will be displayed here -->
+        <section id="shopping-cart">
+            <table class="table">
+                <thead class="table-light">
+                    <!-- <th>S/N</th> -->
+                    <th>Item Image</th>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                    <th>Item Quantity</th>
+                </thead>
+
+                <!-- for displaying the items in the shopping cart -->
+                <?php $ecw->shoppingCartItems("shopping_cart_info_table");  ?>
+                <!-- -->
+            </table>
+
+
+            <!-- for payment/checkout -->
+
+            <div id="cart-summary">
+                <h2>CART SUMMARY</h2>
+            </div>
+
+        </section>
     </main>
 
     <!--  <footer>
-        <p>Copyright &copy; 2023 <a href="index.html"> Easy Shop </a></p>
+        <p>Copyright &copy; 2023 <a href="index.php"> Easy Shop </a></p>
     </footer>
 -->
 

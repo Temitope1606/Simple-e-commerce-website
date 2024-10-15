@@ -23,6 +23,15 @@ $shoppingCartInfoSql = "CREATE TABLE IF NOT EXISTS shopping_cart_info_table(
     date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
 
+$userInfoSql = "CREATE TABLE IF NOT EXISTS users_info_table(
+    sn INT AUTO_INCREMENT PRIMARY KEY,
+    username text NOT NULL,
+    email text NOT NULL,
+    password text NOT NULL,
+    mobile_number text NOT NULL,
+    date_registered TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
 $homeDecoInfoTableSql = "CREATE TABLE IF NOT EXISTS home_deco_info_table(
     sn INT AUTO_INCREMENT PRIMARY KEY,
     item_name text NOT NULL,
@@ -70,8 +79,11 @@ $bagsInfoTableSql = "CREATE TABLE IF NOT EXISTS backpacks_boxes_info_table(
     item_image VARCHAR(255) NOT NULL,
     date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
+// TABLES FOR STORING THE ITEMS, USERS INFO AND SHOPPING CART ITEMS INFO
 $ecw->createTable($itemInfoTableSql);
+$ecw->createTable($userInfoSql);
 $ecw->createTable($shoppingCartInfoSql);
+// TABLES FOR THE DIFFERENT CATEGORIES OF PRODUCT
 $ecw->createTable($homeDecoInfoTableSql);
 $ecw->createTable($homeAppliancesInfoTableSql);
 $ecw->createTable($ladiesInfoTableSql);
