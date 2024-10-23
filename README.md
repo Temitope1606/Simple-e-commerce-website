@@ -27,10 +27,10 @@ This ongoing project is a simple e-commerce website built using HTML, CSS, JavaS
 <h2> <b> Screenshots </b> </h2>
 
 1. HomePage
-- ![Homepage Screenshot](screenshots/1..jpg)
+- ![Homepage Screenshot](screenshots/1.%20.jpg)
 
 2. HomePage(Product List)
-- ![Homepage Screenshot](screenshots/2..jpg)
+- ![Homepage Screenshot](screenshots/2.%20.jpg)
 
 3. HomePage(Product List)
 - ![Homepage Screenshot](screenshots/3..jpg)
