@@ -6,27 +6,37 @@ This ongoing project is a simple e-commerce website built using HTML, CSS, JavaS
 
 # Features
 
-1. Product Listing: Displays products under different categories with their names and prices.
-2. Shopping Cart: Users can add items to the cart and view a summary before checkout.
-3. Account: Users can either register or log in.
+1. **Product Listing:** Displays products under different categories with their names and prices.
+2. **Shopping Cart:** Users can add items to the cart and view a summary before checkout.
+3. **Account:** Users can either register or log in.
+4. **Database Integration:** Items are stored in a database and retrieved to be displayed on the pages.
+
 
 # Technologies Used
 
-1. <b> HTML5 </b> for structure
-2. <b> CSS3 </b> for styling
-3. <b> PHP </b> for server-side logic and database handling
-4. <b> JavaScript </b> for front-end functionality
-5. <b> MySQL </b> (via <b> XAMPP </b> for the local database)
+1. **HTML5** for structure
+2. **CSS3** for styling
+3. **PHP** for server-side logic and database handling
+4. **JavaScript** for front-end functionality
+5. **MySQL** (via **XAMPP** for the local database)
+
 
 # Project Structure
 
-- <b> index.php: </b> The homepage where products are displayed.
-- <b> new-arrival.php: </b> The page where other products or newly arrived products are displayed.
-- <b> shopping-cart.php: </b> The page where products added to cart are displayed.
-- <b> search_result.php: </b> The page is for displaying the search result of products or items.
-- <b> upload-item.php: </b> The page is for uploading or adding items to the database.
-- <b> eCommerce.php: </b> This file contains the necessary php functions and also handles database connection.
-- <b> auth.php: </b> This file contains the codes for authentication like creating database, tables.
+- **index.php:** The homepage where products are displayed.
+- **new-arrival.php:** The page where other products or newly arrived products are displayed.
+- **shopping-cart.php:** The page where products or items added to cart are shown.
+- **search_result.php:** The page is for displaying the search result of products or items.
+- **upload-item.php:** The page is for uploading or adding items to the database.
+- **add_to_cart.php:** This file contains the codes that'll run when 'ADD TO CART' button is clicked.
+- **sign-up.php:** Registration page.
+- **sign-in.php:** Login page.
+- **eCommerce.php:** This file contains the necessary php functions and also handles database connection.
+- **auth.php:** This file contains the codes for authentication like creating database, tables.
+- **script.js:** This javaScript file handles various front-end functionalities in the website. 
+- **assests/css:** This folder contains the css files(main.css, style.css, upload-item.css) for styling the homepage, new arrivals page and upload item page. 
+- **auth/sign-up-in.css:** This css file is for styling the registration and login page. 
+
 
 # Screenshots
 
@@ -58,7 +68,9 @@ This ongoing project is a simple e-commerce website built using HTML, CSS, JavaS
 # Setup Instructions
 
 1. Clone the repository to your laptop, system or computer by running this: 
-- git clone https://github.com/Temitope1606/Simple-e-commerce-website.git
+```bash
+ git clone https://github.com/Temitope1606/Simple-e-commerce-website.git
+```
 2. Set up the database:
   - Make sure you have XAMPP or WAMP running.
   - Place the cloned repository in the htdocs folder (for XAMPP) or the www folder (for WAMP).
@@ -67,3 +79,8 @@ This ongoing project is a simple e-commerce website built using HTML, CSS, JavaS
 3. Access the website
   - Run this on your browser: localhost/foldername/index.php
 
+
+# Future Improvements 
+- **Payment Integration:** Add functionality for users to pay for products in the cart.
+- **User Profiles:** Allow users to manage their profiles.
+- **Order Management:** Store and manage user orders in the database.
