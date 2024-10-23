@@ -199,7 +199,7 @@ class eCommerce
       echo  // To display the trash can
       '<div id="remove-item-container">' .
         '<form action="" method="POST" id="">' .
-        '<input type="number" name="sn" value="' . $itemId . '">' .
+        //'<input type="number" name="sn" value="' . $itemId . '">' .
         '<button name="remove_item" id="remove-item">' .
         '<i class="fas fa-trash"></i>' .
         '<span id="remove">REMOVE</span>' .
