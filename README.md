@@ -30,7 +30,7 @@ This ongoing project is a simple e-commerce website built using HTML, CSS, JavaS
 
 # Screenshots
 
-1. HomePage
+<h3> <b> 1. HomePage </b> </h3> 
 - ![Homepage Screenshot](screenshots/1.%20.jpg)
 
 2. Product List(HomePage)
